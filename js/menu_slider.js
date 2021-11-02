@@ -8,26 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
         $slideContainer.style.left = -100 * idx + '%';
         $currentIndex = idx;
     }
-     
-    $slide[0].addEventListener('click', function(){
-        goToSlide(0);
-        $slide[0].style.opacity = '0.7';
-        $slide[1].style.opacity = '0.2';
-        $slide[2].style.opacity = '0.2';
-    });
-    $slide[1].addEventListener('click', function(){
-        goToSlide(1);
-        $slide[1].style.opacity = '0.7';
-        $slide[0].style.opacity = '0.2';
-        $slide[2].style.opacity = '0.2';
-    });
 
-    $slide[2].addEventListener('click', function(){
-        goToSlide(2);
-        $slide[2].style.opacity = '0.7';
-        $slide[0].style.opacity = '0.2';
-        $slide[1].style.opacity = '0.2';
-    });
+    for(i=0; i < $slide.length; i++) {
+        slideLi(i);
+    }
 
+    function slideLi(idx) {
+        $slide[idx].onclick = function(){
+            for(i=0; i < $slide.length; i++) {
+                $slide[i].classList.remove('on');
+            }
+            goToSlide(idx);
+            $slide[idx].classList.add('on');
+        }
+    }
 });
 
