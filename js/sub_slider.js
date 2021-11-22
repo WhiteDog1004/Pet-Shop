@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $slideWrap.style.height = $slideHeight + 'px';
     $slideContainer.style.height = $slideHeight + 'px';
-        */
+    */
 
     for(var a = 0; a < $slideCount; a++) {
         $slide[a].style.left = a * 100 + '%';
@@ -40,16 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function goToSlide(idx){
         $slideContainer.style.left = -100 * idx + '%';
         $currentIndex = idx;
-
-            //자동 슬라이드 텍스트박스
-            /*
-            if($currentIndex == $currentIndex) {
-                $textSlide[0].classList.remove('active');
-                $textSlide[1].classList.remove('active');
-                $textSlide[2].classList.remove('active');
-                $textSlide[$currentIndex].classList.add('active');
-            }
-            */
     }
 
 
@@ -71,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // 자동 슬라이드 퍼센트 나눈값을 이용해서 처음으로 돌아가게
-
     var cnt = 0;
     setInterval(function(){
 
